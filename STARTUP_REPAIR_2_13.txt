@@ -1,0 +1,17 @@
+HAWRAZ v2.13 — startup repair
+
+Changes:
+- Startup handler now runs exactly once and displays a readable diagnostic instead of leaving an empty view if initialization fails.
+- Service-worker cache version bumped to v15 to avoid stale app-shell assets.
+- HTML references versioned CSS and JavaScript URLs to prevent mixed old/new assets.
+- Password form minimum length is consistent at 8 characters.
+- IndexedDB key and schema version remain unchanged.
+
+Troubleshooting:
+1. Keep a copy of your previous app folder and backup JSON.
+2. Replace the app files together; do not mix files from different versions.
+3. If installed as a PWA, close all HAWRAZ windows and reopen it after the service worker updates.
+4. Do not clear browser site data; it contains local workspace data.
+5. If startup still fails, note the diagnostic message shown in the app.
+
+The browser runtime must support IndexedDB, Web Crypto (for password handling), and modern JavaScript.
